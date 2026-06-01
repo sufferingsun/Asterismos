@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/background_land">
+
+    <!-- Левая часть: фиксированная картинка -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="35"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/paper"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/constellation_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="16dp"
+            android:background="@color/dark_gray_for_constellations"
+            android:src="@drawable/imgand"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/dark_blue"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp">
+
+            <TextView
+                android:id="@+id/name_constellation"
+                style="@style/NameConstellationLayout"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/symbol_image"
+                style="@style/IconThing"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="65"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/paper"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/common_information_header"
+                style="@style/TextViewStyleHeaderHor"
+                android:text="Общая информация"/>
+            <TextView
+                android:id="@+id/common_information"
+                style="@style/TextViewStyleRegularTextHor"
+                android:text="@array/common_information"/>
+
+            <TextView
+                android:id="@+id/story_constellation_header"
+                style="@style/TextViewStyleHeaderHor"
+                android:text="История названия"/>
+            <TextView
+                android:id="@+id/story_constellation"
+                style="@style/TextViewStyleRegularTextHor"
+                android:text="@array/story_constellation"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

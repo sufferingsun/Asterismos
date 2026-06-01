@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_blue">#0a0e2a</color>
+    <color name="nothing">#00FFFFFF</color>
+    <color name="dark_gray_for_constellations">#1B1F2A</color>
+    <color name="light_text_color">#D9C9B0</color>
+    <color name="gold">#C7C763</color>
+
+</resources>

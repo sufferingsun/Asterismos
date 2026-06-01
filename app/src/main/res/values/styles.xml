@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Для заголовков вертикальных-->
+    <style name="TextViewStyleHeaderVert">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@color/dark_gray_for_constellations</item>
+    </style>
+    <!--Для обычных текстов вертикальных-->
+    <style name="TextViewStyleRegularTextVert">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dark_gray_for_constellations</item>
+    </style>
+    <!--Для заголовков горизонтальных-->
+    <style name="TextViewStyleHeaderHor">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColor">@color/dark_gray_for_constellations</item>
+    </style>
+    <!--Для обычных текстов горизонтальных-->
+    <style name="TextViewStyleRegularTextHor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:textColor">@color/dark_gray_for_constellations</item>
+    </style>
+    <!--Для пустой штуки-->
+    <style name="EmptySpace">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/nothing</item>
+    </style>
+    <!--Для поиска-->
+    <style name="SeachView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">40dp</item>
+        <item name="android:background">@drawable/paper</item>
+        <item name="android:queryHint">@string/searchbar</item>
+    </style>
+    <!--Для отцентровки LinearLayout-->
+    <style name="VertCentrHoriz">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <!--Для картинки символа-->
+    <style name="IconThing">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:src">@drawable/test1</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+    <!--Для названия созвездия-->
+    <style name="NameConstellationLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@array/constellation_names</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!--Для текста иконок-->
+    <style name="TextForMenuIcons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/papyrus02</item>
+        <item name="android:textColor">@color/dark_gray_for_constellations</item>
+    </style>
+</resources>

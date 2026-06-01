@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/test_place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            style="@style/VertCentrHoriz">
+
+            <View
+                style="@style/EmptySpace"/>
+
+            <LinearLayout
+                android:id="@+id/buttons_container"
+                style="@style/VertCentrHoriz">
+
+            </LinearLayout>
+
+            <View
+                style="@style/EmptySpace"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
