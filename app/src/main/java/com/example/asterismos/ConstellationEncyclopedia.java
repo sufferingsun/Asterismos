@@ -2,19 +2,20 @@ package com.example.asterismos;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
+import java.text.Normalizer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.Normalizer;
 
 public class ConstellationEncyclopedia extends AppCompatActivity {
 
@@ -67,7 +68,9 @@ public class ConstellationEncyclopedia extends AppCompatActivity {
 
             //А раньше был метод отдельный для обновления карточек в связи с поиском.
             if (!currentSearchQuery.isEmpty()) {
-                if (!constellationNames[i].toLowerCase().contains(currentSearchQuery.toLowerCase())) {
+                // тупая кодировка буквы ё, почему так блин. КТО придумал кодировать ё как е с двоеточием???
+                String NameReplacement = constellationNames[i].toLowerCase().replace('\u0451', '\u0435');
+                if (!NameReplacement.contains(currentSearchQuery.toLowerCase())) {
                     //Принципиально пропускает карточку и не вкидывает её в создание ряда.
                     continue;
                 }
@@ -205,7 +208,7 @@ public class ConstellationEncyclopedia extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 currentSearchQuery = newText;
-                //Пересоздаются кнопочки исходя из работы поиска.
+                //Пересоздаются кнопочки исходя из работы поиска
                 ButtonsMaker();
                 return true;
             }
