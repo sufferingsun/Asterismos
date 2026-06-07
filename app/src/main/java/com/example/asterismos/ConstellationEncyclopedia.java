@@ -15,8 +15,6 @@ import java.text.Normalizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.Normalizer;
-
 public class ConstellationEncyclopedia extends AppCompatActivity {
 
     private ConstellationRepository repository;
@@ -68,9 +66,11 @@ public class ConstellationEncyclopedia extends AppCompatActivity {
 
             //А раньше был метод отдельный для обновления карточек в связи с поиском.
             if (!currentSearchQuery.isEmpty()) {
-                // тупая кодировка буквы ё, почему так блин. КТО придумал кодировать ё как е с двоеточием???
-                String NameReplacement = constellationNames[i].toLowerCase().replace('\u0451', '\u0435');
-                if (!NameReplacement.contains(currentSearchQuery.toLowerCase())) {
+                // Я не могу, я не могу, проблема оказалась в моём устройстве.
+                String NameReplacement = constellationNames[i].toLowerCase();
+                // Тупая замена всратой ё на ё нормальную. Помните, дети, о диакритических знаках
+                String SearchReplacement = currentSearchQuery.toLowerCase().replace("ë","ё");
+                if (!NameReplacement.contains(SearchReplacement)) {
                     //Принципиально пропускает карточку и не вкидывает её в создание ряда.
                     continue;
                 }

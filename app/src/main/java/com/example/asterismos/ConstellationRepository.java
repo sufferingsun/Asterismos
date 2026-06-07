@@ -85,16 +85,6 @@ public class ConstellationRepository {
         return prefs.getBoolean(KEY_FINAL_TEST, false);
     }
 
-
-    // Получение всех изученных созвездий
-    public boolean[] getAllConstellationsLearned() {
-        boolean[] result = new boolean[88];
-        for (int i = 0; i < 88; i++) {
-            result[i] = prefs.getBoolean(KEY_CONSTELLATION_PREFIX + i, false);
-        }
-        return result;
-    }
-
     public String[] getNames() {
         return context.getResources().getStringArray(R.array.constellation_names);
     }
