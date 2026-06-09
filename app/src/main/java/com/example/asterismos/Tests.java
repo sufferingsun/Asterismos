@@ -22,7 +22,7 @@ public class Tests extends AppCompatActivity {
     // Сохраняем контейнер
     private LinearLayout containerForTest;
     //Сохраняем текущую тестовую группу
-    private List<Integer> currentTestGroup;
+    public List<Integer> currentTestGroup;
     private int currentGroupId = -1;
 
     @Override

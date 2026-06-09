@@ -91,7 +91,7 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         List<Button> buttons = Arrays.asList(firstChoise, secondChoise, thirdChoise, fourthChoise);
 
         String correctName = repository.getNames()[id];
-        List<Integer> randomIndices = getRandomDistinctIndices(id, 3);
+        List<Integer> randomIndices = getRandomDistinctIndices(id, 3, groupArray);
 
         List<String> options = new ArrayList<>();
         options.add(correctName);
@@ -99,7 +99,7 @@ public class ConstellationDetailActivity extends AppCompatActivity {
             options.add(repository.getNames()[idx]);
         }
 
-        // смешной рандом
+        // смешной рандом, который случайно берет наши варианты ответов и мешает их
         Collections.shuffle(options);
 
         for (int i = 0; i < buttons.size(); i++) {
@@ -136,16 +136,16 @@ public class ConstellationDetailActivity extends AppCompatActivity {
     }
 
     // Рандомим остальные индексы, которые мы не выбрали как правильные
-    private List<Integer> getRandomDistinctIndices(int excludeId, int count) {
-        List<Integer> allIndices = new ArrayList<>();
-        for (int i = 0; i < 88; i++) {
+    private List<Integer> getRandomDistinctIndices(int excludeId, int count, int[] groupArray) {
+        List<Integer> needIndices = new ArrayList<>();
+        for (int i : groupArray) {
             if (i != excludeId) {
-                allIndices.add(i);
+                needIndices.add(i);
             }
         }
-        // смешной рандом
-        Collections.shuffle(allIndices);
-        return allIndices.subList(0, count);
+        // смешной рандом, который выбирает случайные значения неправильных ответов из группы
+        Collections.shuffle(needIndices);
+        return needIndices.subList(0, count);
     }
 
     // Обработка верного ответа
