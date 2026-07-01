@@ -20,7 +20,6 @@ public class ConstellationDetailActivity extends AppCompatActivity {
     private ConstellationRepository repository;
 
     public int getGoal = 0;
-    public int maxGetGoal = 20;
     public int constellation_group_id;
     private boolean isFinalTest = false;
 
@@ -105,6 +104,9 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         for (int i = 0; i < buttons.size(); i++) {
             buttons.get(i).setText(options.get(i));
         }
+
+        // адаптация количества карточек под сдаваемую группу
+        int maxGetGoal = groupArray.length <= 10 ? groupArray.length * 5 : 100;
 
         for (Button button : buttons){
             button.setOnClickListener(v -> {
