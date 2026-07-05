@@ -19,12 +19,26 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/paper">
 
+            <ProgressBar
+                android:id="@+id/test_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:progressDrawable="@drawable/custom_seekbar"
+                />
+
             <ImageView
                 android:id="@+id/constellation_image"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="400dp"
-                android:layout_margin="20dp"
+                android:layout_height="380dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
                 android:background="@color/dark_gray_for_constellations"
                 android:src="@drawable/imgand"/>
 

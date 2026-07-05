@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -108,11 +109,14 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         // адаптация количества карточек под сдаваемую группу
         int maxGetGoal = groupArray.length <= 10 ? groupArray.length * 5 : 100;
 
+        ProgressBar testProgress = findViewById(R.id.test_progress);
+
         for (Button button : buttons){
             button.setOnClickListener(v -> {
                 if (button.getText().equals(correctName)){
                     // Ай какая молодца, теперь дальше
                     getGoal++;
+                    testProgress.setProgress(getGoal);
                     if (getGoal!=maxGetGoal){
                         moveToNextTest(groupArray);
                     } else{

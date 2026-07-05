@@ -128,7 +128,6 @@ public class Tests extends AppCompatActivity {
             if (UserAdministration.getInstance().isAdmin()){
                 // При долгом нажатии закрываем группу
                 TestButton.setOnLongClickListener(v -> {
-                    // Вкусная, вкусная архитектура!
                     repository.setGroupTestPassed(constellationGroupId);
                     onResume();
                     return true;
@@ -173,7 +172,6 @@ public class Tests extends AppCompatActivity {
             if (UserAdministration.getInstance().isAdmin()){
                 // При долгом нажатии закрываем финальный тест
                 GroupTestButtonLAST.setOnLongClickListener(v -> {
-                    // Вкусная, вкусная архитектура!
                     repository.setFinalTestPassed(true);
                     onResume();
                     return true;
@@ -218,7 +216,6 @@ public class Tests extends AppCompatActivity {
                 // При долгом нажатии закрываем занятие
                 int finalI = i;
                 LessonButton.setOnLongClickListener(v -> {
-                    // Вкусная, вкусная архитектура!
                     repository.setConstellationLearned(finalTestGroup.get(finalI));
                     onResume();
                     return true;
@@ -255,7 +252,6 @@ public class Tests extends AppCompatActivity {
             if (UserAdministration.getInstance().isAdmin()){
                 // При долгом нажатии закрываем группу
                 GroupTestButton.setOnLongClickListener(v -> {
-                    // Вкусная, вкусная архитектура!
                     repository.setGroupTestPassed(constellationGroupId);
                     onResume();
                     return true;
