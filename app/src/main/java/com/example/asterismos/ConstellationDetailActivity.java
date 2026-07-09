@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -66,6 +67,20 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         storyView.setText(repository.getStory()[id]);
         imageConstellationView.setImageResource(repository.getConstellationImages()[id]);
         imageSymbolView.setImageResource(repository.getSymbolImages()[id]);
+
+        // Из-за того что жаба использует копию переменной, оно не синхронится с основной. Пришлось сделать мелкий массивчик для изменений
+        final boolean[] switchImg = {true};
+
+        ImageButton switchButton = findViewById(R.id.switch_button);
+        switchButton.setOnClickListener(v -> {
+            if (switchImg[0]){
+                imageConstellationView.setImageResource(repository.getRealConstellationImages()[id]);
+                switchImg[0] = false;
+            } else {
+                imageConstellationView.setImageResource(repository.getConstellationImages()[id]);
+                switchImg[0] = true;
+            }
+        });
     }
 
     private void loadConstellationDataForTestMenu(int id) {

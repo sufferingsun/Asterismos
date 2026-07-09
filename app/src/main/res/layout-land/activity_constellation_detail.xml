@@ -7,8 +7,11 @@
     android:background="@drawable/background_land">
 
     <!-- Левая часть: фиксированная картинка -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_weight="35"
         android:orientation="vertical"
@@ -47,6 +50,20 @@
         </LinearLayout>
 
     </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/switch_button"
+            android:src="@drawable/switchbutton"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="25dp"
+            />
+    </FrameLayout>
+
 
     <ScrollView
         android:layout_width="0dp"

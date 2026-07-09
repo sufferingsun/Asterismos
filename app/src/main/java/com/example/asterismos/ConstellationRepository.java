@@ -33,6 +33,24 @@ public class ConstellationRepository {
             R.drawable.imgpsa, R.drawable.imgcru, R.drawable.imgtra, R.drawable.imglac
     };
 
+    private static final int[] REAL_CONSTELLATION_IMAGES = {
+            R.drawable.rimgand, R.drawable.rimggem, R.drawable.rimguma, R.drawable.rimgcma, R.drawable.rimglib, R.drawable.rimgaqr,
+            R.drawable.rimgaur, R.drawable.rimglup, R.drawable.rimgboo, R.drawable.rimgcom, R.drawable.rimgcrv, R.drawable.rimgher,
+            R.drawable.rimghya, R.drawable.rimgcol, R.drawable.rimgcvn, R.drawable.rimgvir, R.drawable.rimgdel, R.drawable.rimgdra,
+            R.drawable.rimgmon, R.drawable.rimgara, R.drawable.rimgpic, R.drawable.rimgcam, R.drawable.rimggru, R.drawable.rimglep,
+            R.drawable.rimgoph, R.drawable.rimgser, R.drawable.rimgdor, R.drawable.rimgind, R.drawable.rimgcas, R.drawable.rimgcar,
+            R.drawable.rimgcet, R.drawable.rimgcap, R.drawable.rimgpyx, R.drawable.rimgpup, R.drawable.rimgcyg, R.drawable.rimgleo,
+            R.drawable.rimgvol, R.drawable.rimglyr, R.drawable.rimgvul, R.drawable.rimgumi, R.drawable.rimgequ, R.drawable.rimglmi,
+            R.drawable.rimgcmi, R.drawable.rimgmic, R.drawable.rimgmus, R.drawable.rimgant, R.drawable.rimgnor, R.drawable.rimgari,
+            R.drawable.rimgoct, R.drawable.rimgaql, R.drawable.rimgori, R.drawable.rimgpav, R.drawable.rimgvel, R.drawable.rimgpeg,
+            R.drawable.rimgper, R.drawable.rimgfor, R.drawable.rimgaps, R.drawable.rimgcnc, R.drawable.rimgcae, R.drawable.rimgpsc,
+            R.drawable.rimglyn, R.drawable.rimgcrb, R.drawable.rimgsex, R.drawable.rimgret, R.drawable.rimgsco, R.drawable.rimgscl,
+            R.drawable.rimgmen, R.drawable.rimgsge, R.drawable.rimgsgr, R.drawable.rimgtel, R.drawable.rimgtau, R.drawable.rimgtri,
+            R.drawable.rimgtuc, R.drawable.rimgphe, R.drawable.rimgcha, R.drawable.rimgcen, R.drawable.rimgcep, R.drawable.rimgcir,
+            R.drawable.rimghor, R.drawable.rimgcrt, R.drawable.rimgsct, R.drawable.rimgeri, R.drawable.rimghyi, R.drawable.rimgcra,
+            R.drawable.rimgpsa, R.drawable.rimgcru, R.drawable.rimgtra, R.drawable.rimglac
+    };
+
     private static final int[] SYMBOL_IMAGES = {
             R.drawable.iconand, R.drawable.icongem, R.drawable.iconuma, R.drawable.iconcma, R.drawable.iconlib, R.drawable.iconaqr,
             R.drawable.iconaur, R.drawable.iconlup, R.drawable.iconboo, R.drawable.iconcom, R.drawable.iconcrv, R.drawable.iconher,
@@ -104,5 +122,7 @@ public class ConstellationRepository {
     public int[] getSymbolImages() {
         return SYMBOL_IMAGES;
     }
+
+    public int[] getRealConstellationImages() { return REAL_CONSTELLATION_IMAGES; }
 
 }
