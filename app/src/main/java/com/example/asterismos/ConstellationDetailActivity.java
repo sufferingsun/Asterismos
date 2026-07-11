@@ -1,6 +1,5 @@
 package com.example.asterismos;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -24,6 +23,7 @@ public class ConstellationDetailActivity extends AppCompatActivity {
     public int getGoal = 0;
     public int constellation_group_id;
     private boolean isFinalTest = false;
+    private int PreviousId = -1;
 
 
     @Override
@@ -68,7 +68,7 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         imageConstellationView.setImageResource(repository.getConstellationImages()[id]);
         imageSymbolView.setImageResource(repository.getSymbolImages()[id]);
 
-        // Из-за того что жаба использует копию переменной, оно не синхронится с основной. Пришлось сделать мелкий массивчик для изменений
+        // Из-за того что жаба использует копию переменной, оно не синхронится с основной пришлось сделать мелкий массивчик для изменений. В теории я могла сделать глобалку, но зачем
         final boolean[] switchImg = {true};
 
         ImageButton switchButton = findViewById(R.id.switch_button);
@@ -86,11 +86,9 @@ public class ConstellationDetailActivity extends AppCompatActivity {
     private void loadConstellationDataForTestMenu(int id) {
         TextView nameView = findViewById(R.id.name_constellation);
         ImageView imageConstellationView = findViewById(R.id.constellation_image);
-        ImageView imageSymbolView = findViewById(R.id.symbol_image);
 
         nameView.setText(repository.getNames()[id]);
         imageConstellationView.setImageResource(repository.getConstellationImages()[id]);
-        imageSymbolView.setImageResource(repository.getSymbolImages()[id]);
     }
 
     private void loadConstellationDataForTest(int id, int[] groupArray) {
@@ -133,7 +131,9 @@ public class ConstellationDetailActivity extends AppCompatActivity {
                     getGoal++;
                     testProgress.setProgress(getGoal);
                     if (getGoal!=maxGetGoal){
-                        moveToNextTest(groupArray);
+                        //Сохраняем старое созвездие, чтобы оно не повторялось
+                        PreviousId = id;
+                        moveToNextTest(groupArray, PreviousId);
                     } else{
                         // сбитие счётчика
                         getGoal = 0;
@@ -170,10 +170,14 @@ public class ConstellationDetailActivity extends AppCompatActivity {
     }
 
     // Обработка верного ответа
-    private void moveToNextTest(int[] groupArray) {
+    private void moveToNextTest(int[] groupArray, int PreviousId) {
         Random random = new Random();
-        int randomIndex = random.nextInt(groupArray.length);
-        int realIndex = groupArray[randomIndex];
+        int randomIndex;
+        int realIndex;
+        do {
+            randomIndex = random.nextInt(groupArray.length);
+            realIndex = groupArray[randomIndex];
+        } while (randomIndex == PreviousId);
 
         // Создание нового теста
         loadConstellationDataForTest(realIndex, groupArray);
