@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
-import java.text.Normalizer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +26,7 @@ public class ConstellationEncyclopedia extends AppCompatActivity {
     //Переменная для сохранения введённого текста поиска.
     private String currentSearchQuery = "";
 
-    private int IsFromTest = 0;
+    private final int IsFromTest = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

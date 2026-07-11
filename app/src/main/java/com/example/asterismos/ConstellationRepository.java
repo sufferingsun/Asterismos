@@ -11,8 +11,8 @@ public class ConstellationRepository {
     private static final String KEY_FINAL_TEST = "final_test_passed";
 
 
-    private SharedPreferences prefs;
-    private Context context;
+    private final SharedPreferences prefs;
+    private final Context context;
 
     // Массивы с данными созвездий
     private static final int[] CONSTELLATION_IMAGES = {
