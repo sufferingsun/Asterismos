@@ -58,4 +58,15 @@
         android:layout_marginTop="450dp"
         android:src="@drawable/froggggy"/>
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/backbutton"
+        />
+
 </FrameLayout>

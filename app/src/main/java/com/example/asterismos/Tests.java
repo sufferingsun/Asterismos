@@ -3,7 +3,9 @@ package com.example.asterismos;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.activity.OnBackPressedCallback;
@@ -39,6 +41,19 @@ public class Tests extends AppCompatActivity {
         showTestButtons();
 
         getOnBackPressedDispatcher().addCallback(this, callback);
+
+        ImageButton Back = findViewById(R.id.back);
+        Back.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if (!isShowingTestButtons) {
+                    // если мы на созвездиях, возвращаемся на тесты
+                    showTestButtons();
+                } else {
+                    // если на тестах, то выходим на главный экран
+                    finish();
+                }
+            }
+        });
     }
 
     // Обработка системной кнопки назад. Я НЕНАВИЖУ эту штуку

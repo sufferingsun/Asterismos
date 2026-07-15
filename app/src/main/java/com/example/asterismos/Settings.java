@@ -1,5 +1,6 @@
 package com.example.asterismos;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,6 @@ public class Settings extends AppCompatActivity {
 
         createMusic();
 
-
         ImageButton Secret = findViewById(R.id.developer);
         Secret.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +44,14 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
+
+        ImageButton Back = findViewById(R.id.back);
+        Back.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(Settings.this, MainMenu.class));
+            }
+        });
+
     }
 
     private void createMusic(){

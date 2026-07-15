@@ -1,7 +1,9 @@
 package com.example.asterismos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -89,6 +91,13 @@ public class ConstellationDetailActivity extends AppCompatActivity {
 
         nameView.setText(repository.getNames()[id]);
         imageConstellationView.setImageResource(repository.getConstellationImages()[id]);
+
+        ImageButton Back = findViewById(R.id.back);
+        Back.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View v){
+               finish();
+           }
+        });
     }
 
     private void loadConstellationDataForTest(int id, int[] groupArray) {
@@ -171,13 +180,14 @@ public class ConstellationDetailActivity extends AppCompatActivity {
 
     // Обработка верного ответа
     private void moveToNextTest(int[] groupArray, int PreviousId) {
+        Log.d("TEST", String.valueOf(PreviousId));
         Random random = new Random();
         int randomIndex;
         int realIndex;
         do {
             randomIndex = random.nextInt(groupArray.length);
             realIndex = groupArray[randomIndex];
-        } while (randomIndex == PreviousId);
+        } while (realIndex == PreviousId);
 
         // Создание нового теста
         loadConstellationDataForTest(realIndex, groupArray);
